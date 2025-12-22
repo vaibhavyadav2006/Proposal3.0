@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; 
+            background-color: #f3d3d8;
+            font-family: 'Georgia', serif;
+            /* background-image: url(original-c9f62d749794c91b068f181419252ba7.webp);
+            background-position: center; */
+        }
+
+        .proposal-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        
+        .proposal-container p {
+            position: absolute;
+            font-size: 1.8rem;
+            color: #d63384;
+            width: 80%;
+            opacity: 0;
+            margin: 0;
+        }
+
+        /* Animations for the first 3 lines */
+        .fade-out-line {
+            animation: fadeSequence 5s forwards;
+        }
+
+        /* The final line stays visible */
+        .final-line {
+            animation: finalFade 1s forwards;
+        }
+
+        @keyframes fadeSequence {
+            0% { opacity: 0; transform: translateY(10px); }
+            10% { opacity: 1; transform: translateY(0); }
+            90% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(-10px); }
+        }
+
+        @keyframes finalFade {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        
+        .btn-group {
+            margin-top: 100px;
+            opacity: 0;
+            display: flex;
+            gap: 20px;
+            animation: finalFade 1s forwards;
+            animation-delay: 17s; 
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+        }
+
+        #noBtn {
+            background-color: #adb5bd;
+            color: white;
+            position: relative;
+        }
+        .crush-img {
+        width: 200px; 
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%; 
+        border: 5px solid #ff4d6d;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        position: center;
+        top: 20%; 
+        opacity: 0;
+        
+        animation: fadeSequence 5s forwards; 
+        animation-delay: 10s;
+        }
+
+        .crush-img_2 {
+        width: 200px; 
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%; 
+        border: 5px solid #ff4d6d;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        position: center;
+        top: 20%; 
+        opacity: 0;
+        
+        animation: finalFade 5s forwards; 
+        animation-delay: 15s;
+        }
+
+        
+</style>
+</head>
+<body>
+
+    <div class="proposal-container">
+    <img src="WhatsApp Image 2025-12-22 at 7.03.32 PM.jpeg" alt="Anshika img" class="crush-img">
+    <img src="WhatsApp Image 2025-12-22 at 6.57.01 PM.jpeg" alt = "Anshika Img" class="crush-img_2">
+    <p style="animation-delay: 0s;" class="fade-out-line">I've realized that being with you is the way I want to spend my "forever".</p>
+    <p style="animation-delay: 5s;" class="fade-out-line">I did the math, and the results are in: We belong together.</p>
+    <p style="animation-delay: 10s;" class="fade-out-line">I Love You Anshika💕</p>
+    <p style="animation-delay: 15s;" class="final-line">Life without you is like a broken pencil—pointless.<br><b>Will you be my "Khusi"?</b></p>
+
+    
+    <div class="btn-group">
+        <button id="yesBtn" onclick="accepted()">Yes</button>
+        <button id="noBtn">No</button>
+    
+    </div>
+    </div>
+    
+
+    <script>
+        function accepted() {
+        alert("Yay! You've made me the happiest person ever! ❤️");
+
+        }
+        
+
+
+        let myDot = document.getElementById("noBtn");
+        function myFun(){
+            
+            let x = Math.random()* (window.innerWidth) - 60;
+            let y = Math.random()* (window.innerHeight) - 60;
+
+            myDot.style.left = x + "px";
+            myDot.style.top = y + "px";
+        }
+        myDot.addEventListener("mouseover",myFun);
+
+
+        // let myDot = document.getElementById("noBtn");
+
+    // function myFun() {
+    // // 1. Get the button's dimensions
+    // const btnWidth = myDot.offsetWidth;
+    // const btnHeight = myDot.offsetHeight;
+
+    // // 2. Calculate the maximum available space
+    // // We subtract the button size so it doesn't poke out the right/bottom
+    // const maxX = window.innerWidth - btnWidth;
+    // const maxY = window.innerHeight - btnHeight;
+
+    // // 3. Generate random values between 0 and the Max space
+    // // Math.max(0, ...) ensures the number is never negative
+    // let x = Math.max(0, Math.floor(Math.random() * maxX));
+    // let y = Math.max(0, Math.floor(Math.random() * maxY));
+
+    // // 4. Apply the style
+    // myDot.style.position = "fixed"; // Use fixed to stay relative to the screen
+    // myDot.style.left = x + "px";
+    // myDot.style.top = y + "px";
+    // }
+
+    // myDot.addEventListener("mouseover", myFun);
+  
+    </script>
+</body>
+</html>
+
+
